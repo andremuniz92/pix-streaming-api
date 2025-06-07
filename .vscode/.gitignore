@@ -1,0 +1,21 @@
+# Virtual env
+venv/
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite
+db.sqlite3
+
+# VSCode configs
+.vscode/
+
+# Logs
+*.log
+
+# Migrations
+**/migrations/
+!*/migrations/__init__.py
