@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import PixMessage, StreamSession
 
-# Register your models here.
+admin.site.register(PixMessage)
+admin.site.register(StreamSession)
+
