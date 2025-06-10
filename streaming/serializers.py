@@ -5,15 +5,17 @@ from .models import StreamSession
 class PixMessageSerializer(serializers.ModelSerializer):
     pagador = serializers.SerializerMethodField()
     recebedor = serializers.SerializerMethodField()
-    end_to_end_id = serializers.CharField()
+    endToEndId = serializers.CharField(source='end_to_end_id')
+    valor = serializers.DecimalField(max_digits=10, decimal_places=2)
     txId = serializers.CharField(source='tx_id')
     dataHoraPagamento = serializers.DateTimeField(source='data_pagamento')
+    campoLivre = serializers.CharField(source='campo_livre')
 
     class Meta:
         model = PixMessage
         fields = [
-            'end_to_end_id', 'valor', 'pagador', 'recebedor',
-            'campo_livre', 'txId', 'dataHoraPagamento'
+            'endToEndId', 'valor', 'pagador', 'recebedor',
+            'campoLivre', 'txId', 'dataHoraPagamento'
         ]
 
     def get_pagador(self, obj):
